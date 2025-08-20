@@ -98,7 +98,7 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         </div>
 
-        {/* Page content - starts at same level as sidebar content */}
+    
         <main className="p-6">
           {children}
         </main>
