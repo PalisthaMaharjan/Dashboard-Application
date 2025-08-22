@@ -3,6 +3,7 @@ import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { fetchUsers, setFilteredUsers } from '../store/slices/usersSlice';
 import { setSearchTerm, setStatusFilter, setRoleFilter } from '../store/slices/filterSlice';
 import { setCurrentPage } from '../store/slices/paginationSlice';
+import { PenBox, RefreshCcw, Trash2 } from 'lucide-react';
 
 const Data = () => {
   const dispatch = useAppDispatch();
@@ -111,17 +112,10 @@ const Data = () => {
               onClick={handleRefresh}
               className="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
+              <RefreshCcw className="w-4 h-4 mr-2" />
               Refresh
             </button>
-            <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-              </svg>
-              Add New Record
-            </button>
+           
           </div>
         </div>
       </div>
@@ -200,8 +194,8 @@ const Data = () => {
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.role}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.lastLogin}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <button className="text-blue-600 hover:text-blue-900 mr-3">Edit</button>
-                    <button className="text-red-600 hover:text-red-900">Delete</button>
+                    <button className="text-blue-600 hover:text-blue-900 mr-3"><PenBox className="w-4 h-4 mr-2" /></button>
+                    <button className="text-red-600 hover:text-red-900"><Trash2 className="w-4 h-4 mr-2" /></button>
                   </td>
                 </tr>
               ))}
