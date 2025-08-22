@@ -54,7 +54,7 @@ export const fetchUsers = createAsyncThunk(
       lastLogin: new Date(Date.now() - Math.random() * 7 * 24 * 60 * 60 * 1000).toLocaleString(),
       actions: 'Edit'
     }));
-    
+
     return transformedUsers;
   }
 );
